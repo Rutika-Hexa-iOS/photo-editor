@@ -39,6 +39,11 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     
+//    *******
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var btnGreenTick: UIButton!
+    @IBOutlet weak var btnMore: UIButton!
+    
     public var image: UIImage?
     /**
      Array of Stickers -UIImage- that the user will choose from
@@ -81,6 +86,14 @@ public final class PhotoEditorViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.setImageView(image: image!)
+        
+        cropButton.setImage(UIImage(named: "ic_Crop"), for: .normal)
+        stickerButton.setImage(UIImage(named: "ic_Sticker"), for: .normal)
+        textButton.setImage(UIImage(named: "ic_Text"), for: .normal)
+        drawButton.setImage(UIImage(named: "ic_Brush"), for: .normal)
+        btnBack.setImage(UIImage(named: "ic_ArrowBack"), for: .normal)
+        btnMore.setImage(UIImage(named: "ic_More"), for: .normal)
+        btnGreenTick.setImage(UIImage(named: "ic_RoundGreenTick"), for: .normal)
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
