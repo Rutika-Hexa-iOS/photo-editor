@@ -13,11 +13,13 @@ import UIKit
 extension PhotoEditorViewController: CropViewControllerDelegate {
     
     public func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect) {
+        hideToolbar(hide: false)
         controller.dismiss(animated: true, completion: nil)
         self.setImageView(image: image)
     }
     
     public func cropViewControllerDidCancel(_ controller: CropViewController) {
+        hideToolbar(hide: false)
         controller.dismiss(animated: true, completion: nil)
     }
     

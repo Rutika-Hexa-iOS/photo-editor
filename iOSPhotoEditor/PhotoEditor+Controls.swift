@@ -30,6 +30,8 @@ extension PhotoEditorViewController {
     }
 
     @IBAction func cropButtonTapped(_ sender: UIButton) {
+        topToolbar.isHidden = true
+        bottomToolbar.isHidden = true
         let controller = CropViewController()
         controller.delegate = self
         controller.image = image
