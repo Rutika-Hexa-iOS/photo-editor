@@ -83,7 +83,13 @@ open class CropViewController: UIViewController {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Define the attributes for the button text color
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 
+        UIBarButtonItem.appearance().setTitleTextAttributes(textAttributes, for: .normal)   /// Set the attributes for the navigation bar buttons
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.toolbar.isTranslucent = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(CropViewController.cancel(_:)))
